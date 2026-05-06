@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h2>Convertidor</h2>
+    <input type="number" id="valor" placeholder="Kilómetros">
+    <button onclick="calcular()">Convertir</button>
+    <div id="res"></div>
+
+    <script>
+        function calcular() {
+            
+            var campo = document.getElementById('valor');
+            var caja = document.getElementById('res');
+            
+           
+            var n = parseFloat(campo.value);
+
+           
+            const M = 1000;
+            const C = 100000;
+            const MI = 0.621371;
+
+            
+            if (n >= 0) {
+                var metros = n * M;
+                var centi = n * C;
+                var millas = n * MI;
+
+                caja.style.color = "black";
+                caja.innerHTML = 
+                    "Metros: " + metros + "<br>" +
+                    "Centímetros: " + centi + "<br>" +
+                    "Millas: " + millas.toFixed(4);
+            } else {
+              
+                caja.style.color = "red";
+                caja.innerHTML = "Error: Ingresa un número positivo";
+            }
+        }
+    </script>
+</body>
+</html>
